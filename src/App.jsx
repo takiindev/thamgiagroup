@@ -1,29 +1,36 @@
 import React, { useEffect, useState, useRef } from "react";
 
 const daiTraLinks = [
-  { label: "DHTH 20A", url: "https://zalo.me/g/srklfp129" },
-  { label: "DHTH 20B", url: "https://zalo.me/g/zxdpve593" },
-  { label: "DHTH 20C", url: "https://zalo.me/g/zbdjun514" },
-  { label: "DHTH 20D", url: "https://zalo.me/g/kssokm054" },
-  { label: "DHTH 20E", url: "https://zalo.me/g/vryagw074" },
-  { label: "DHTH 20F", url: "https://zalo.me/g/dxebwx890" },
-  { label: "DHTH 20G", url: "https://zalo.me/g/yvoozq791" },
-  { label: "DHTH 20H", url: "https://zalo.me/g/wraslb289" },
-  { label: "DHTH 20I", url: "https://zalo.me/g/sudqts875" },
-  { label: "DHTH 20J", url: "https://zalo.me/g/xlhuqu886" },
+
+  { label: "DHCNTT21A", url: "https://zalo.me/g/az8fdzearjlck7bgm35z" },
+  { label: "DHHTTT21A", url: "https://zalo.me/g/1wk7clkgcmelqzoyzf8q" },
+  { label: "DHHTTT21B", url: "https://zalo.me/g/es3zvrllc20kctjmf3f7" },
+  { label: "DHKHDL21A", url: "https://zalo.me/g/8labwannt7brqi1seztd" },
+  { label: "DHKHMT21A", url: "https://zalo.me/g/qreidylmwg8gxnjzk5jo" },
+  { label: "DHKTPM21A", url: "https://zalo.me/g/bb71tm08gyymysaspiw4" },
+  { label: "DHKTPM21B", url: "https://zalo.me/g/jd1cfj4ynwamxoywa2ks" },
+  { label: "DHTTNT21A", url: "https://zalo.me/g/az8fdzearjlck7bgm35z" },
 ];
 
 const daiTraCLCLinks = [
-  { label: "DHTH 20A-CLC", url: "https://zalo.me/g/clone1" },
-  { label: "DHTH 20B-CLC", url: "https://zalo.me/g/clone2" },
-  { label: "DHTH 20C-CLC", url: "https://zalo.me/g/clone3" },
-  { label: "DHTH 20D-CLC", url: "https://zalo.me/g/clone4" },
-  { label: "DHTH 20E-CLC", url: "https://zalo.me/g/clone5" },
-  { label: "DHTH 20F-CLC", url: "https://zalo.me/g/clone6" },
-  { label: "DHTH 20G-CLC", url: "https://zalo.me/g/clone7" },
-  { label: "DHTH 20H-CLC", url: "https://zalo.me/g/clone8" },
-  { label: "DHTH 20I-CLC", url: "https://zalo.me/g/clone9" },
-  { label: "DHTH 20J-CLC", url: "https://zalo.me/g/clone10" },
+  { label: "DHCNTT21A_TCTA", url: "https://zalo.me/g/xqokiofns9sdjclvcmkj" },
+  { label: "DHHTTT21A_TCTA", url: "https://zalo.me/g/kzn1ehmhjvuaepcpnwgs" },
+  { label: "DHHTTT21B_TCTA", url: "https://zalo.me/g/qczp1sgznygtfkecwmmp" },
+  { label: "DHKHMT21A_TCTA", url: "https://zalo.me/g/wf6024146zig3zup1jfh" },
+  { label: "DHKHMT21B_TCTA", url: "https://zalo.me/g/sohkkvoljwpwwza4euix" },
+  { label: "DHKTPM21A_TCTA", url: "https://zalo.me/g/lghutigewhm6httphuyf" },
+  { label: "DHKTPM21B_TCTA", url: "https://zalo.me/g/xfdupps5pyiepsm29cjr" },
+];
+
+const kstnLinks = [
+  { label: "DHHTTT21A_KSTN", url: "https://zalo.me/g/ufcnzt4dmlr1r0be48u6" },
+  { label: "DHKTPM21A_KSTN", url: "https://zalo.me/g/sja7sweqdp8sbakfejve" },
+];
+
+const alvLinks = [
+  { label: "DHCNTT21A_VL`", url: "https://zalo.me/g/0wzyyfow8aytrwnkdonc" },
+  { label: "DHCNTT21B_VL", url: "https://zalo.me/g/flbwvetl3blnhfvdwnj2" },
+  { label: "DHCNTT22_AVL", url: "https://zalo.me/g/negnyy7l8163bniby613" },
 ];
 
 function WhiteTechParticles() {
@@ -117,8 +124,15 @@ export default function App() {
     return () => clearTimeout(timeout);
   }, [activeTab]);
 
-  const activeLinks = activeTab === "clc" ? daiTraCLCLinks : daiTraLinks;
 
+  const map = {
+    daiTra: daiTraLinks,
+    clc: daiTraCLCLinks,
+    kstn: kstnLinks,
+    avl: alvLinks // Add Kỹ sư tài năng links here if available
+  };
+
+  const activeLinks = map[activeTab] || [];
   return (
     <>
       <style>{`
@@ -169,10 +183,15 @@ export default function App() {
         /* --- Tab Menu CSS --- */
         .tabs {
           display: flex;
+          flex-wrap: wrap;
           justify-content: center;
-          border-bottom: 2px solid #334155;
           margin: 40px auto 40px;
           width: fit-content;
+          padding-bottom: 10px;
+        }
+
+        .tabs div{
+        display: flex;
         }
 
         .tab-btn {
@@ -180,7 +199,8 @@ export default function App() {
           font-size: 18px;
           background: none;
           border: none;
-          border-bottom: 3px solid transparent;
+          // border-bottom: 3px solid gray;
+          border-bottom: 2px solid #334155;
           color: #94a3b8;
           cursor: pointer;
           font-weight: 600;
@@ -195,6 +215,7 @@ export default function App() {
         .tab-btn.active {
           color: #38bdf8;
           border-bottom: 3px solid #38bdf8;
+
         }
 
         /* --- Link boxes --- */
@@ -284,6 +305,47 @@ export default function App() {
           from { opacity: 0; transform: translateY(-30px); }
           to { opacity: 1; transform: translateY(0); }
         }
+
+        @media (max-width: 768px) {
+          .header h1 {
+            font-size: 28px;
+          }
+          .header p {
+            font-size: 16px;
+          }
+
+          .link-box {
+            width: 90%;
+            height: 70px;
+            font-size: 18px;
+          }
+
+          .tab-btn {
+          font-size: 14px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .header{
+
+            h1{
+              font-size: 24px;
+            }
+            p{
+              font-size: 14px;
+            }
+          }
+          .link-box {
+            width: 100%;
+            height: 60px;
+            font-size: 16px;
+          }
+
+          .tab-btn {
+            padding: 10px 20px;
+            font-size: 14px;
+          }
+        }
       `}</style>
 
       <WhiteTechParticles />
@@ -295,18 +357,34 @@ export default function App() {
       </header>
 
       <div className="tabs">
-        <button
-          className={`tab-btn ${activeTab === "daiTra" ? "active" : ""}`}
-          onClick={() => setActiveTab("daiTra")}
-        >
-          Đại trà
-        </button>
-        <button
-          className={`tab-btn ${activeTab === "clc" ? "active" : ""}`}
-          onClick={() => setActiveTab("clc")}
-        >
-          Chất lượng cao
-        </button>
+        <div>
+          <button
+            className={`tab-btn ${activeTab === "daiTra" ? "active" : ""}`}
+            onClick={() => setActiveTab("daiTra")}
+          >
+            Đại trà
+          </button>
+          <button
+            className={`tab-btn ${activeTab === "clc" ? "active" : ""}`}
+            onClick={() => setActiveTab("clc")}
+          >
+            Chất lượng cao
+          </button>
+        </div>
+        <div>
+          <button
+            className={`tab-btn ${activeTab === "kstn" ? "active" : ""}`}
+            onClick={() => setActiveTab("kstn")}
+          >
+            Kỹ sư tài năng
+          </button>
+          <button
+            className={`tab-btn ${activeTab === "avl" ? "active" : ""}`}
+            onClick={() => setActiveTab("avl")}
+          >
+            Liên thông
+          </button>
+        </div>
       </div>
 
       <main>
