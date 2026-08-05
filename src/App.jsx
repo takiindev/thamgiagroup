@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 
 const daiTraLinks = [
 
-  { label: "DHCNTT21A", url: "https://zalo.me/g/az8fdzearjlck7bgm35z" },
+  { label: "DHCNTT21A", url: "https://zalo.me/g/fxvhzpc6cup38px0hovw" },
   { label: "DHHTTT21A", url: "https://zalo.me/g/1wk7clkgcmelqzoyzf8q" },
   { label: "DHHTTT21B", url: "https://zalo.me/g/es3zvrllc20kctjmf3f7" },
   { label: "DHKHDL21A", url: "https://zalo.me/g/8labwannt7brqi1seztd" },
