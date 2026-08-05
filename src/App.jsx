@@ -28,9 +28,9 @@ const kstnLinks = [
 ];
 
 const alvLinks = [
-  { label: "DHCNTT21A_VL`", url: "https://zalo.me/g/0wzyyfow8aytrwnkdonc" },
-  { label: "DHCNTT21B_VL", url: "https://zalo.me/g/flbwvetl3blnhfvdwnj2" },
-  { label: "DHCNTT22_AVL", url: "https://zalo.me/g/negnyy7l8163bniby613" },
+  { label: "DHCNTT21AVL`", url: "https://zalo.me/g/0wzyyfow8aytrwnkdonc" },
+  { label: "DHCNTT21BVL", url: "https://zalo.me/g/flbwvetl3blnhfvdwnj2" },
+  { label: "DHCNTT22AVL", url: "https://zalo.me/g/negnyy7l8163bniby613" },
 ];
 
 function WhiteTechParticles() {
