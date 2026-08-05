@@ -28,7 +28,7 @@ const kstnLinks = [
 ];
 
 const alvLinks = [
-  { label: "DHCNTT21AVL`", url: "https://zalo.me/g/0wzyyfow8aytrwnkdonc" },
+  { label: "DHCNTT21AVL", url: "https://zalo.me/g/0wzyyfow8aytrwnkdonc" },
   { label: "DHCNTT21BVL", url: "https://zalo.me/g/flbwvetl3blnhfvdwnj2" },
   { label: "DHCNTT22AVL", url: "https://zalo.me/g/negnyy7l8163bniby613" },
 ];
